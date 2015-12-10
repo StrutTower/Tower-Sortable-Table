@@ -1,0 +1,31 @@
+[data-twr-table-sorter], [twr-table-sorter] {
+  cursor: pointer;
+  position: relative;
+}
+
+[data-twr-table-sorter].twr-sort-desc, [data-twr-table-sorter].twr-sort-asc, [twr-table-sorter].twr-sort-desc, [twr-table-sorter].twr-sort-asc {
+  color: black;
+}
+
+[data-twr-table-sorter].twr-sort-desc .fa-sort, [data-twr-table-sorter].twr-sort-asc .fa-sort, [twr-table-sorter].twr-sort-desc .fa-sort, [twr-table-sorter].twr-sort-asc .fa-sort {
+  display: none;
+}
+
+[data-twr-table-sorter].twr-sort-desc i.fa-sort-desc, [twr-table-sorter].twr-sort-desc i.fa-sort-desc {
+  color: black;
+  display: inline-block;
+}
+
+[data-twr-table-sorter].twr-sort-asc i.fa-sort-asc, [twr-table-sorter].twr-sort-asc i.fa-sort-asc {
+  color: black;
+  display: inline-block;
+}
+
+[data-twr-table-sorter] i, [twr-table-sorter] i {
+  margin-left: 5px;
+  color: #aaa;
+}
+
+[data-twr-table-sorter] i.fa-sort-desc, [data-twr-table-sorter] i.fa-sort-asc, [twr-table-sorter] i.fa-sort-desc, [twr-table-sorter] i.fa-sort-asc {
+  display: none;
+}

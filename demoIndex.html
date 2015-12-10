@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html data-ng-app="TableSorterDemo">
+<head>
+    <title>Sortable Table Demo</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="" />
+
+    <link rel="stylesheet" href="src/twrSortableTable.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-size:1.1em;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        h3 {
+            text-align:center;
+        }
+        ul {
+            font-size:0.8em;
+        }
+        table {
+            border:1px solid #949494;
+            border-spacing: 0;
+            border-collapse: separate;
+            max-width:1000px;
+            margin:30px auto;
+        }
+        table td, table th {
+            padding:5px 10px;
+            text-align:center;
+        }
+        table thead {
+            background:#cbcbcb;
+        }
+        pre.code {
+            background:#1e1e1e;
+            color:#c8c8c8;
+            padding:10px;
+            max-width:1000px;
+            margin:5px auto;
+            overflow-x:auto;
+            border-radius:4px;
+            box-shadow: 0 0 10px #555;
+        }
+        .el {
+            color:#569CD6;
+        }
+        .at {
+            color:#9CDCFE;
+        }
+        .ng {
+            color:#ff00ff;
+        }
+        code {
+            color:#4770ba;
+        }
+    </style>
+</head>
+<body data-ng-controller="TableSorterController as vm">
+
+    <ul>
+        <li>
+            Add a <code>data-twr-sortable-table</code> attribute to the table element.
+        </li>
+        <li>
+            Add a <code>data-twr-sorting-variable</code> attribute to the table element
+            and provide the name of the variable you wish to use for sorting the table.
+        </li>
+        <li>
+            On each column header you want to sort by add a <code>data-twr-table-sorter</code>
+            attribute and provide the property name of the object that will be displayed in that column.
+        </li>
+        <li>
+            Add a <code>data-twr-table-default</code> attribute on the column that you want to be sorted by default.
+        </li>
+        <li>
+            On the ngRepeat add the orderBy filter and use the variable that you provided on the table element.
+        </li>
+        <li>Requires FontAwesome for the sorting icon next the the header names.</li>
+    </ul>
+
+    <h3>States</h3>
+    <table data-twr-sortable-table data-twr-sorting-variable="vm.sorting.states">
+        <thead>
+            <tr>
+                <th data-twr-table-sorter="name" data-twr-table-default>Name</th>
+                <th data-twr-table-sorter="capital">Capital</th>
+                <th>Flag</th>
+                <th data-twr-table-sorter="nickname">Nickname</th>
+                <th data-twr-table-sorter="statehoodDate">Statehood Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr data-ng-repeat="state in vm.states | orderBy: vm.sorting.states">
+                <td>{{state.name}}</td>
+                <td>{{state.capital}}</td>
+                <td><i>Unsortable Column Example</i></td>
+                <td>{{state.nickname}}</td>
+                <td>{{state.statehoodDate | date: 'MMMM d, yyyy'}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div style="text-align:center;">
+        <a href="" data-ng-click="vm.toggleStateTableCode()">Show/Hide HTML Code</a>
+        </div>
+
+    <div data-ng-show="vm.settings.showStateTableCode">
+        <pre class="code" data-ng-non-bindable>
+<span class="el">&lt;table</span> <span class="at">data-twr-sortable-table</span> <span class="at">data-twr-sorting-variable=</span><span>&quot;vm.sorting.states&quot;</span><span class="el">&gt;</span>
+    <span class="el">&lt;thead&gt;</span>
+        <span class="el">&lt;tr&gt;</span>
+            <span class="el">&lt;th</span> <span class="at">data-twr-table-sorter=</span><span>&quot;name&quot;</span> <span class="at">data-twr-table-default</span><span class="el">&gt;</span>Name<span class="el">&lt;/th&gt;</span>
+            <span class="el">&lt;th</span> <span class="at">data-twr-table-sorter=</span><span>&quot;capital&quot;</span><span class="el">&gt;</span>Capital<span class="el">&lt;/th&gt;</span>
+            <span class="el">&lt;th&gt;</span>Flag<span class="el">&lt;/th&gt;</span>
+            <span class="el">&lt;th</span> <span class="at">data-twr-table-sorter=</span><span>&quot;nickname&quot;</span><span class="el">&gt;</span>Nickname<span class="el">&lt;/th&gt;</span>
+            <span class="el">&lt;th</span> <span class="at">data-twr-table-sorter=</span><span>&quot;statehoodDate&quot;</span><span class="el">&gt;</span>Statehood Date<span class="el">&lt;/th&gt;</span>
+        <span class="el">&lt;/tr&gt;</span>
+    <span class="el">&lt;/thead&gt;</span>
+    <span class="el">&lt;tbody&gt;</span>
+        <span class="el">&lt;tr</span> <span class="at">data-ng-repeat=</span><span>&quot;state in vm.states | orderBy: vm.sorting.states&quot;</span><span class="el">&gt;</span>
+            <span class="el">&lt;td&gt;</span>{{<span class="ng">state.name</span>}}<span class="el">&lt;/td&gt;</span>
+            <span class="el">&lt;td&gt;</span>{{<span class="ng">state.capital</span>}}<span class="el">&lt;/td&gt;</span>
+            <span class="el">&lt;td&gt;&lt;i&gt;</span>Unsortable Column Example<span class="el">&lt;/i&gt;&lt;/td&gt;</span>
+            <span class="el">&lt;td&gt;</span>{{<span class="ng">state.nickname</span>}}<span class="el">&lt;/td&gt;</span>
+            <span class="el">&lt;td&gt;</span>{{<span class="ng">state.statehoodDate | date: &#39;MMMM d, yyyy&#39;</span>}}<span class="el">&lt;/td&gt;</span>
+        <span class="el">&lt;/tr&gt;</span>
+    <span class="el">&lt;/tbody&gt;</span>
+<span class="el">&lt;/table&gt;</span>
+        </pre>
+    </div>
+
+    <hr />
+
+    <h3>Games</h3>
+    <table data-twr-sortable-table data-twr-sorting-variable="vm.sorting.games">
+        <thead>
+            <tr>
+                <th class="twr-table-sorter" data-twr-table-sorter="name" data-twr-table-default>Name</th>
+
+                <th class="twr-table-sorter" data-twr-table-sorter="platform">Platform</th>
+                <th class="twr-table-sorter" data-twr-table-sorter="releaseDate">Release Date(US)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr data-ng-repeat="game in vm.games | orderBy: vm.sorting.games">
+                <td>{{game.name}}</td>
+                <td>{{game.platform}}</td>
+                <td>{{game.releaseDate | date: 'MMMM d, yyyy'}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div style="text-align:center;">
+        <a href="" data-ng-click="vm.toggleGameTableCode()">Show/Hide HTML Code</a>
+    </div>
+
+    <div data-ng-show="vm.settings.showGameTableCode">
+        <pre class="code" data-ng-non-bindable>
+<span class="el">&lt;table</span> <span class="at">data-twr-sortable-table</span> <span class="at">data-twr-sorting-variable=</span><span>&quot;vm.sorting.games&quot;</span><span class="el">&gt;</span>
+    <span class="el">&lt;thead&gt;</span>
+        <span class="el">&lt;tr&gt;</span>
+            <span class="el">&lt;th</span> <span class="at">class=</span><span>&quot;twr-table-sorter&quot;</span> <span class="at">data-twr-table-sorter=</span><span>&quot;name&quot;</span> <span class="at">data-twr-table-default</span><span class="el">&gt;</span>Name<span class="el">&lt;/th&gt;</span>
+            <span class="el">&lt;th</span> <span class="at">class=</span><span>&quot;twr-table-sorter&quot;</span> <span class="at">data-twr-table-sorter=</span><span>&quot;platform&quot;</span><span class="el">&gt;</span>Platform<span class="el">&lt;/th&gt;</span>
+            <span class="el">&lt;th</span> <span class="at">class=</span><span>&quot;twr-table-sorter&quot;</span> <span class="at">data-twr-table-sorter=</span><span>&quot;releaseDate&quot;</span><span class="el">&gt;</span>Release Date(US)<span class="el">&lt;/th&gt;</span>
+        <span class="el">&lt;/tr&gt;</span>
+    <span class="el">&lt;/thead&gt;</span>
+    <span class="el">&lt;tbody&gt;</span>
+        <span class="el">&lt;tr</span> <span class="at">data-ng-repeat=</span><span>&quot;game in vm.games | orderBy: vm.sorting.games&quot;</span><span class="el">&gt;</span>
+            <span class="el">&lt;td&gt;</span>{{<span class="ng">game.name</span>}}<span class="el">&lt;/td&gt;</span>
+            <span class="el">&lt;td&gt;</span>{{<span class="ng">game.platform</span>}}<span class="el">&lt;/td&gt;</span>
+            <span class="el">&lt;td&gt;</span>{{<span class="ng">game.releaseDate | date: &#39;MMMM d, yyyy&#39;</span>}}<span class="el">&lt;/td&gt;</span>
+        <span class="el">&lt;/tr&gt;</span>
+    <span class="el">&lt;/tbody&gt;</span>
+<span class="el">&lt;/table&gt;</span>
+        </pre>
+    </div>
+
+    <hr />
+
+    <a href="" data-ng-click="vm.toggleJsonData()">Toggle Viewing JSON Data</a>
+
+    <div data-ng-show="vm.settings.showJsonData">
+        <pre>JSON data
+
+{{vm | json}}</pre>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="src/twrSortableTable.js"></script>
+    <script src="demoApp.js"></script>
+</body>
+</html>
