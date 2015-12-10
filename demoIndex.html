@@ -20,6 +20,9 @@
         ul {
             font-size:0.8em;
         }
+        .ng-cloak {
+            display:none;
+        }
         table {
             border:1px solid #949494;
             border-spacing: 0;
@@ -107,7 +110,7 @@
         <a href="" data-ng-click="vm.toggleStateTableCode()">Show/Hide HTML Code</a>
         </div>
 
-    <div data-ng-show="vm.settings.showStateTableCode">
+    <div class="ng-cloak" data-ng-show="vm.settings.showStateTableCode">
         <pre class="code" data-ng-non-bindable>
 <span class="el">&lt;table</span> <span class="at">data-twr-sortable-table</span> <span class="at">data-twr-sorting-variable=</span><span>&quot;vm.sorting.states&quot;</span><span class="el">&gt;</span>
     <span class="el">&lt;thead&gt;</span>
@@ -157,7 +160,7 @@
         <a href="" data-ng-click="vm.toggleGameTableCode()">Show/Hide HTML Code</a>
     </div>
 
-    <div data-ng-show="vm.settings.showGameTableCode">
+    <div class="ng-cloak" data-ng-show="vm.settings.showGameTableCode">
         <pre class="code" data-ng-non-bindable>
 <span class="el">&lt;table</span> <span class="at">data-twr-sortable-table</span> <span class="at">data-twr-sorting-variable=</span><span>&quot;vm.sorting.games&quot;</span><span class="el">&gt;</span>
     <span class="el">&lt;thead&gt;</span>
@@ -182,7 +185,7 @@
 
     <a href="" data-ng-click="vm.toggleJsonData()">Toggle Viewing JSON Data</a>
 
-    <div data-ng-show="vm.settings.showJsonData">
+    <div class="ng-cloak" data-ng-show="vm.settings.showJsonData">
         <pre>JSON data
 
 {{vm | json}}</pre>
