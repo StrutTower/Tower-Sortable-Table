@@ -43,14 +43,14 @@
                 element.bind('click', function () {
                     var propertyName = attrs.twrTableSorter;
 
-                    if (element.hasClass('twr-sort-desc')) {
+                    if (element.hasClass('twr-sort-asc')) {
                         tableController.changeSorting('-' + propertyName);
-                        element.addClass('twr-sort-asc');
+                        element.addClass('twr-sort-desc');
                         scope.$apply();
                     }
                     else {
                         tableController.changeSorting(propertyName);
-                        element.addClass('twr-sort-desc');
+                        element.addClass('twr-sort-asc');
                         scope.$apply();
                     }
                 });
@@ -59,7 +59,7 @@
 
                 if (attrs.twrTableDefault != null && attrs.twrTableDefault.length >= 0) {
                     tableController.changeSorting(attrs.twrTableSorter);
-                    element.addClass('twr-sort-desc');
+                    element.addClass('twr-sort-asc');
                 }
                 element.append('<i class="fa fa-sort"></i><i class="fa fa-sort-desc"></i><i class="fa fa-sort-asc"></i>');
             }
