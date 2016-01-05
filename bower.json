@@ -12,8 +12,8 @@
   },
   "ignore": [
     ".gitignore",
-    "demoApp.js",
-    "demoIndex.html"
+    "demo/app.js",
+    "demo/index.html"
   ],
   "private": true
 }
