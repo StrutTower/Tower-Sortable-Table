@@ -11,7 +11,7 @@
     "font-awesome": "*"
   },
   "ignore": [
-    ".gitignore"
+    ".gitignore",
     "demoApp.js",
     "demoIndex.html"
   ],
