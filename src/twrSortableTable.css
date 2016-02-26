@@ -1,5 +1,5 @@
 [data-twr-table-sorter], [twr-table-sorter] {
-  white-space:nowrap;
+  white-space: nowrap;
   cursor: pointer;
   position: relative; }
   [data-twr-table-sorter].twr-sort-desc, [data-twr-table-sorter].twr-sort-asc, [twr-table-sorter].twr-sort-desc, [twr-table-sorter].twr-sort-asc {

@@ -18,7 +18,7 @@
                 return {
                     setHeader: setHeader,
                     changeSorting: changeSorting
-                }
+                };
 
                 function setHeader(headerElement) {
                     scope.headers.push(headerElement);
@@ -32,7 +32,7 @@
                     scope.twrSortingVariable = propertyName;
                 }
             }]
-        }
+        };
     }
 
     function twrTableSorter() {
@@ -63,6 +63,6 @@
                 }
                 element.append('<i class="fa fa-sort"></i><i class="fa fa-sort-desc"></i><i class="fa fa-sort-asc"></i>');
             }
-        }
+        };
     }
 })();
