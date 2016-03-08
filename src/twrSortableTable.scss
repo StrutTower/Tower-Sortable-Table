@@ -34,7 +34,7 @@
     [data-twr-table-sorter], [twr-table-sorter] {
         i {
             &.fa-sort, &.fa-sort-desc, &.fa-sort-asc {
-                display:none;
+                display:none !important;
             }
         }
     }

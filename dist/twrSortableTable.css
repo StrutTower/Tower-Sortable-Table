@@ -17,4 +17,4 @@
 
 @media print {
   [data-twr-table-sorter] i.fa-sort, [data-twr-table-sorter] i.fa-sort-desc, [data-twr-table-sorter] i.fa-sort-asc, [twr-table-sorter] i.fa-sort, [twr-table-sorter] i.fa-sort-desc, [twr-table-sorter] i.fa-sort-asc {
-    display: none; } }
+    display: none !important; } }
