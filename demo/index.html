@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="" />
 
-    <link rel="stylesheet" href="../src/twrSortableTable.css" />
+    <link rel="stylesheet" href="../dist/twrSortableTable.min.css" />
     <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.min.css">
     <style>
         body {
@@ -140,7 +140,7 @@
     <h3>Games</h3>
     <table data-twr-sortable-table data-twr-sorting-variable="vm.sorting.games">
         <thead>
-            <tr>
+            <tr style="background:#444;color:white;">
                 <th class="twr-table-sorter" data-twr-table-sorter="name" data-twr-table-default>Name</th>
 
                 <th class="twr-table-sorter" data-twr-table-sorter="platform">Platform</th>
@@ -191,8 +191,8 @@
 {{vm | json}}</pre>
     </div>
 
-    <script src="../bower_components/angular/angular.js"></script>
-    <script src="../src/twrSortableTable.js"></script>
+    <script src="../bower_components/angular/angular.min.js"></script>
+    <script src="../dist/twrSortableTable.min.js"></script>
     <script src="app.js"></script>
 </body>
 </html>

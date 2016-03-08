@@ -14,12 +14,12 @@ var options = {
         src: 'src/twrSortableTable.scss',
         outputFilename: 'twrSortableTable.css',
         minifiedOutputFilename: 'twrSortableTable.min.css',
-        srcOutput: 'src',
         distOutput: 'dist'
     },
     js: {
         src: 'src/twrSortableTable.js',
-        outputFilename: 'twrSortableTable.min.js',
+        outputFilename: 'twrSortableTable.js',
+        outputFilenameMinified: 'twrSortableTable.min.js',
         distOutput: 'dist'
     }
 }
@@ -30,6 +30,8 @@ gulp.task('default', ['buildJS', 'buildSass']);
 gulp.task('buildJS', function () {
     return gulp.src(options.js.src)
         .pipe(concat(options.js.outputFilename))
+        .pipe(gulp.dest(options.js.distOutput))
+        .pipe(concat(options.js.outputFilenameMinified))
         .pipe(uglify())
         .pipe(gulp.dest(options.js.distOutput));
 });
@@ -38,7 +40,7 @@ gulp.task('buildSass', function () {
     return gulp.src(options.sass.src)
         .pipe(sass({ errLogToConsole: true }).on('error', sass.logError))
         .pipe(concat(options.sass.outputFilename))
-        .pipe(gulp.dest(options.sass.srcOutput))
+        .pipe(gulp.dest(options.sass.distOutput))
         .pipe(concat(options.sass.minifiedOutputFilename))
         .pipe(cssMin({
             keepSpecialComments: 0

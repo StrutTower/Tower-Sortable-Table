@@ -4,26 +4,25 @@
     position: relative;
 
     &.twr-sort-desc, &.twr-sort-asc {
-        color: black;
-
         .fa-sort {
             display:none;
         }
     }
 
     &.twr-sort-desc i.fa-sort-desc {
-        color: black;
         display: inline-block;
     }
 
     &.twr-sort-asc i.fa-sort-asc {
-        color: black;
         display: inline-block;
     }
 
     i {
         margin-left: 5px;
-        color: #aaa;
+
+        &.fa-sort {
+            color:#999;
+        }
 
         &.fa-sort-desc, &.fa-sort-asc {
             display:none;
