@@ -35,7 +35,8 @@
         };
     }
 
-    function twrTableSorter() {
+    twrTableSorter.$inject = ['$templateCache'];
+    function twrTableSorter($templateCache) {
         return {
             require: '^twrSortableTable',
             restrict: 'A',
@@ -61,7 +62,8 @@
                     tableController.changeSorting(attrs.twrTableSorter);
                     element.addClass('twr-sort-asc');
                 }
-                element.append('<i class="fa fa-sort"></i><i class="fa fa-sort-desc"></i><i class="fa fa-sort-asc"></i>');
+
+                element.append('<i class="twr-sorter-icon"></i>');
             }
         };
     }

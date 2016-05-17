@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html data-ng-app="TableSorterDemo">
+<html data-ng-app="tableSorterDemo">
 <head>
     <title>Sortable Table Demo</title>
     <meta charset="utf-8" />
@@ -8,7 +8,6 @@
     <meta name="description" content="" />
 
     <link rel="stylesheet" href="../dist/twrSortableTable.min.css" />
-    <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.min.css">
     <style>
         body {
             font-size:1.1em;
@@ -61,7 +60,7 @@
         }
     </style>
 </head>
-<body data-ng-controller="TableSorterController as vm">
+<body data-ng-controller="tableSorterController as vm">
 
     <ul>
         <li>
@@ -192,7 +191,8 @@
     </div>
 
     <script src="../bower_components/angular/angular.min.js"></script>
-    <script src="../dist/twrSortableTable.min.js"></script>
+    <script src="../src/twrSortableTable.js"></script>
+    <!--<script src="../dist/twrSortableTable.min.js"></script>-->
     <script src="app.js"></script>
 </body>
 </html>

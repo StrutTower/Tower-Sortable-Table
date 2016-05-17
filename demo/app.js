@@ -2,8 +2,8 @@
     'use strict';
 
     angular
-        .module('TableSorterDemo', ['twrSortableTable'])
-        .controller('TableSorterController', tableSorterController);
+        .module('tableSorterDemo', ['twrSortableTable'])
+        .controller('tableSorterController', tableSorterController);
 
 
     function tableSorterController() {

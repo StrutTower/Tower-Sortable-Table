@@ -1,5 +1,5 @@
 {
-  "name": "Tower-Sortable-Table",
+  "name": "tower-sortable-table",
   "authors": [ "StrutTower" ],
   "description": "A simple directive for sorting a table in AngularJS",
   "main": [
@@ -7,8 +7,7 @@
     "src/twrSortableTable.css"
   ],
   "dependencies": {
-    "angular": "*",
-    "font-awesome": "*"
+    "angular": "*"
   },
   "ignore": [
     ".gitignore",

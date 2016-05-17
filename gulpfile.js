@@ -4,10 +4,12 @@ var gulp = require('gulp'),
     concat = require('gulp-concat'),
     sass = require('gulp-sass'),
     uglify = require('gulp-uglify'),
-    cssMin = require('gulp-minify-css'),
+    cssMin = require('gulp-cssmin'),
+    templateCache = require('gulp-angular-templatecache'),
+    preprocess = require('gulp-preprocess'),
+    include = require('gulp-include'),
     jscs = require('gulp-jscs'),
-    jshint = require('gulp-jshint'),
-    stylish = require('gulp-jscs-stylish');
+    jshint = require('gulp-jshint');
 
 var options = {
     sass: {
@@ -26,9 +28,10 @@ var options = {
 
 gulp.task('default', ['buildJS', 'buildSass']);
 
-
 gulp.task('buildJS', function () {
     return gulp.src(options.js.src)
+        .pipe(include())
+        .pipe(preprocess())
         .pipe(concat(options.js.outputFilename))
         .pipe(gulp.dest(options.js.distOutput))
         .pipe(concat(options.js.outputFilenameMinified))
@@ -48,12 +51,16 @@ gulp.task('buildSass', function () {
         .pipe(gulp.dest(options.sass.distOutput));
 });
 
-gulp.task('lintJS', function () {
+gulp.task('_jsHint', function () {
     return gulp.src('src/**/*.js')
         .pipe(jshint())
+        .pipe(jshint.reporter());
+});
+
+gulp.task('_jscs', function () {
+    return gulp.src('src/**/*.js')
         .pipe(jscs())
-        .pipe(stylish.combineWithHintResults())
-        .pipe(jshint.reporter('jshint-stylish'));
+        .pipe(jscs.reporter());
 })
 
 gulp.task('watch:sass', function () {
