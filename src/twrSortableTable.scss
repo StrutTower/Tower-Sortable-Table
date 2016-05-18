@@ -5,9 +5,10 @@ table[data-twr-sortable-table], table[twr-sortable-table] {
         position: relative;
 
         i.twr-sorter-icon {
-            font-size:0.5em;
+            font-size:0.8em;
             position:relative;
             margin:0 0.2em;
+            padding-right:0.4em;
 
             &:before, &:after {
                 position: absolute;

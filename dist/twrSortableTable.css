@@ -3,9 +3,10 @@ table[data-twr-sortable-table] [data-twr-table-sorter], table[data-twr-sortable-
   cursor: pointer;
   position: relative; }
   table[data-twr-sortable-table] [data-twr-table-sorter] i.twr-sorter-icon, table[data-twr-sortable-table] [twr-table-sorter] i.twr-sorter-icon, table[twr-sortable-table] [data-twr-table-sorter] i.twr-sorter-icon, table[twr-sortable-table] [twr-table-sorter] i.twr-sorter-icon {
-    font-size: 0.5em;
+    font-size: 0.8em;
     position: relative;
-    margin: 0 0.2em; }
+    margin: 0 0.2em;
+    padding-right: 0.4em; }
     table[data-twr-sortable-table] [data-twr-table-sorter] i.twr-sorter-icon:before, table[data-twr-sortable-table] [data-twr-table-sorter] i.twr-sorter-icon:after, table[data-twr-sortable-table] [twr-table-sorter] i.twr-sorter-icon:before, table[data-twr-sortable-table] [twr-table-sorter] i.twr-sorter-icon:after, table[twr-sortable-table] [data-twr-table-sorter] i.twr-sorter-icon:before, table[twr-sortable-table] [data-twr-table-sorter] i.twr-sorter-icon:after, table[twr-sortable-table] [twr-table-sorter] i.twr-sorter-icon:before, table[twr-sortable-table] [twr-table-sorter] i.twr-sorter-icon:after {
       position: absolute;
       opacity: 0.5; }
