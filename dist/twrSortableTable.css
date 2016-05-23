@@ -11,10 +11,10 @@ table[data-twr-sortable-table] [data-twr-table-sorter], table[data-twr-sortable-
       position: absolute;
       opacity: 0.5; }
     table[data-twr-sortable-table] [data-twr-table-sorter] i.twr-sorter-icon:before, table[data-twr-sortable-table] [twr-table-sorter] i.twr-sorter-icon:before, table[twr-sortable-table] [data-twr-table-sorter] i.twr-sorter-icon:before, table[twr-sortable-table] [twr-table-sorter] i.twr-sorter-icon:before {
-      top: -0.8em;
+      top: -0.45em;
       content: '\25b2'; }
     table[data-twr-sortable-table] [data-twr-table-sorter] i.twr-sorter-icon:after, table[data-twr-sortable-table] [twr-table-sorter] i.twr-sorter-icon:after, table[twr-sortable-table] [data-twr-table-sorter] i.twr-sorter-icon:after, table[twr-sortable-table] [twr-table-sorter] i.twr-sorter-icon:after {
-      top: 0.1em;
+      top: 0.45em;
       content: '\25bc'; }
   table[data-twr-sortable-table] [data-twr-table-sorter].twr-sort-asc .twr-sorter-icon:before, table[data-twr-sortable-table] [twr-table-sorter].twr-sort-asc .twr-sorter-icon:before, table[twr-sortable-table] [data-twr-table-sorter].twr-sort-asc .twr-sorter-icon:before, table[twr-sortable-table] [twr-table-sorter].twr-sort-asc .twr-sorter-icon:before {
     opacity: 1; }

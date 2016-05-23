@@ -1,4 +1,4 @@
-[Live Demo] (https://rawgit.com/StrutTower/Tower-Sortable-Table/1.0.7/demo/index.html)
+[Live Demo] (https://rawgit.com/StrutTower/Tower-Sortable-Table/1.0.8/demo/index.html)
 
 ## Instructions
 

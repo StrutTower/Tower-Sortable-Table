@@ -16,12 +16,12 @@ table[data-twr-sortable-table], table[twr-sortable-table] {
             }
 
             &:before {
-                top:-0.8em;
+                top:-0.45em;
                 content: '\25b2';
             }
 
             &:after {
-                top:0.1em;
+                top:0.45em;
                 content: '\25bc';
             }
         }
