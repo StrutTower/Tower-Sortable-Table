@@ -7,9 +7,7 @@ var gulp = require('gulp'),
     cssMin = require('gulp-cssmin'),
     templateCache = require('gulp-angular-templatecache'),
     preprocess = require('gulp-preprocess'),
-    include = require('gulp-include'),
-    jscs = require('gulp-jscs'),
-    jshint = require('gulp-jshint');
+    include = require('gulp-include');
 
 var options = {
     sass: {
@@ -50,18 +48,6 @@ gulp.task('buildSass', function () {
         }))
         .pipe(gulp.dest(options.sass.distOutput));
 });
-
-gulp.task('_jsHint', function () {
-    return gulp.src('src/**/*.js')
-        .pipe(jshint())
-        .pipe(jshint.reporter());
-});
-
-gulp.task('_jscs', function () {
-    return gulp.src('src/**/*.js')
-        .pipe(jscs())
-        .pipe(jscs.reporter());
-})
 
 gulp.task('watch:sass', function () {
     gulp.watch(options.sass.src, ['buildSass']);

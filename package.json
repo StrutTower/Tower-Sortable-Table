@@ -1,6 +1,10 @@
 {
   "name": "tower-sortable-table",
+  "version": "1.0.9",
   "private": true,
+  "dependencies": {
+    "angular": "latest"
+  },
   "devDependencies": {
     "node-sass": "^3.3.3",
     "gulp": "^3.9.0",
